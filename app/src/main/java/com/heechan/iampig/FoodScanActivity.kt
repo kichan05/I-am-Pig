@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.google.zxing.ResultPoint
 import com.heechan.iampig.databinding.ActivityFoodScanBinding
@@ -12,12 +13,17 @@ import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.CaptureManager
 
 class FoodScanActivity : AppCompatActivity() {
-    private lateinit var capture: CaptureManager
     lateinit var binding : ActivityFoodScanBinding
+
+    private lateinit var capture: CaptureManager
+    val viewModel : FoodScanViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_food_scan)
+        binding = DataBindingUtil.setContentView<ActivityFoodScanBinding?>(this, R.layout.activity_food_scan).apply {
+            lifecycleOwner = this@FoodScanActivity
+            vm = viewModel
+        }
 
         capture = CaptureManager(this, binding.barCodeScannerFoodScan).apply {
             initializeFromIntent(this@FoodScanActivity.intent, savedInstanceState)
@@ -26,7 +32,7 @@ class FoodScanActivity : AppCompatActivity() {
 
         binding.barCodeScannerFoodScan.decodeContinuous(object : BarcodeCallback {
             override fun barcodeResult(result: BarcodeResult?) {
-                binding.txtFoodScanBarcodeId.text = result.toString()
+                viewModel.barCodeId.value = result.toString()
             }
 
             override fun possibleResultPoints(resultPoints: MutableList<ResultPoint>?) {

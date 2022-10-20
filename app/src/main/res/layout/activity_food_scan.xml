@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="vm"
+            type="com.heechan.iampig.FoodScanViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="바코드 결과"
+            android:text="@{vm.barCodeId}"
+            tools:text="바코드 id"
             android:textSize="24sp"
 
             android:layout_marginTop="12dp"

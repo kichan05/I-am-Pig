@@ -12,14 +12,49 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_main"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+
+            android:background="@color/white"
+            android:elevation="7dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/img_mainHeader_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_logo_mini"
+                />
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <TextView
+            android:id="@+id/btn_main_addFood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="음식 추가하기"
+            android:fontFamily="@font/font"
+            android:textFontWeight="700"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+
+            android:background="?attr/colorPrimary"
+
+            android:paddingVertical="16dp"
+
+            android:gravity="center"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

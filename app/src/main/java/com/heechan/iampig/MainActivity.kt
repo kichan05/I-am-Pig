@@ -1,5 +1,5 @@
 package com.heechan.iampig
-
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -12,6 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        
+        binding.run {
+            btnMainAddFood.setOnClickListener {
+                val intent = Intent(this@MainActivity, FoodScanActivity::class.java)
+                startActivityForResult(intent, SC_CODE)
+            }
+        }
+    }
+
+    companion object {
+        const val SC_CODE = 1
     }
 }

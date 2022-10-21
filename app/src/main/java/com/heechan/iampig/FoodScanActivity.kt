@@ -33,6 +33,7 @@ class FoodScanActivity : AppCompatActivity() {
         binding.barCodeScannerFoodScan.decodeContinuous(object : BarcodeCallback {
             override fun barcodeResult(result: BarcodeResult?) {
                 viewModel.barCodeId.value = result.toString()
+                viewModel.getFoodDataByBarcodeId()
             }
 
             override fun possibleResultPoints(resultPoints: MutableList<ResultPoint>?) {

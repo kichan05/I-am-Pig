@@ -1,4 +1,4 @@
-package com.heechan.iampig.data
+package com.heechan.iampig.model.data
 
 data class C005(
     val row: List<Food>,

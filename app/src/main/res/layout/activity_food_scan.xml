@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.heechan.iampig.FoodScanViewModel" />
+            type="com.heechan.iampig.ui.foodScan.FoodScanViewModel" />
 
         <import type="com.heechan.iampig.utils.State"/>
     </data>
@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FoodScanActivity">
+        tools:context=".ui.foodScan.FoodScanActivity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line_foodScan_vrCenter"
@@ -90,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            app:bindVisibility="@{vm.state == State.LOADING}"
+            app:bindVisibility="@{vm.apiState == State.LOADING}"
 
             app:layout_constraintTop_toTopOf="@id/txt_foodScan_foodName"
             app:layout_constraintBottom_toBottomOf="@+id/txt_foodScan_foodName"

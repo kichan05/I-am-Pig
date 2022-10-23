@@ -1,7 +1,6 @@
-package com.heechan.iampig
+package com.heechan.iampig.model.remote
 
-import com.heechan.iampig.data.Food
-import com.heechan.iampig.data.FoodApiResponse
+import com.heechan.iampig.model.data.FoodApiResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient

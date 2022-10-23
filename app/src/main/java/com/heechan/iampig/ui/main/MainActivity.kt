@@ -1,8 +1,10 @@
-package com.heechan.iampig
+package com.heechan.iampig.ui.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.heechan.iampig.ui.foodScan.FoodScanActivity
+import com.heechan.iampig.R
 import com.heechan.iampig.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

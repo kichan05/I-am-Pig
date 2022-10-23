@@ -1,10 +1,10 @@
-package com.heechan.iampig
+package com.heechan.iampig.model.remote
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.heechan.iampig.data.Food
+import com.heechan.iampig.model.data.Food
 
 @Database(entities = arrayOf(Food::class), version = 1, exportSchema = false)
 abstract class FoodDatabase : RoomDatabase() {

@@ -1,11 +1,10 @@
-package com.heechan.iampig
+package com.heechan.iampig.model.remote
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.heechan.iampig.data.Food
-import java.time.LocalDateTime
+import com.heechan.iampig.model.data.Food
 
 @Dao
 interface FoodDao {

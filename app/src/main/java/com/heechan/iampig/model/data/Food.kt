@@ -1,4 +1,4 @@
-package com.heechan.iampig.data
+package com.heechan.iampig.model.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

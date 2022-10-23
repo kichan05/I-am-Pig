@@ -1,6 +1,7 @@
-package com.heechan.iampig
+package com.heechan.iampig.model.remote
 
-import com.heechan.iampig.data.FoodApiResponse
+import com.heechan.iampig.BuildConfig
+import com.heechan.iampig.model.data.FoodApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

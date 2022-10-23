@@ -1,8 +1,7 @@
-package com.heechan.iampig
+package com.heechan.iampig.model.remote
 
 import android.app.Application
-import com.heechan.iampig.data.Food
-import com.heechan.iampig.utils.Result
+import com.heechan.iampig.model.data.Food
 import java.time.LocalDateTime
 
 class FoodDBRepository(application: Application) {

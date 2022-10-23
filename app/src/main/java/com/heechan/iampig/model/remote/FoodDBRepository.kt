@@ -5,7 +5,7 @@ import com.heechan.iampig.model.data.Food
 import java.time.LocalDateTime
 
 class FoodDBRepository(application: Application) {
-    val foodDao : FoodDao by lazy {
+    private val foodDao : FoodDao by lazy {
         FoodDatabase.getDatabase(application).foodDao()
     }
 

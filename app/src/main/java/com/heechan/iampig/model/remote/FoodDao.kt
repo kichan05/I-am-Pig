@@ -8,7 +8,7 @@ import com.heechan.iampig.model.data.Food
 
 @Dao
 interface FoodDao {
-    @Query("SELECT * FROM food_table")
+    @Query("SELECT * FROM food_table ORDER BY date DESC")
     fun getFoodData() : List<Food>
 
     @Query("SELECT * FROM food_table WHERE date = :date")

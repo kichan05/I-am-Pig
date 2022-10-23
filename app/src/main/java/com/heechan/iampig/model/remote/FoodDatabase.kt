@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.heechan.iampig.model.data.Food
 
-@Database(entities = arrayOf(Food::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(Food::class), version = 2, exportSchema = false)
 abstract class FoodDatabase : RoomDatabase() {
     abstract fun foodDao(): FoodDao
 

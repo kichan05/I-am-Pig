@@ -58,7 +58,6 @@ class FoodScanActivity : AppCompatActivity() {
 
         binding.btnFoodScanRegisterFood.setOnClickListener {
             viewModel.insertFood()
-
         }
 
         viewModel.barCodeId.observe(this) {

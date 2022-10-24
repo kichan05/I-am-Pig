@@ -33,12 +33,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        supportFragmentManager
+
         viewModel.getAllData()
 
         viewModel.foodList.observe(this) {
             val adapter = FoodListAdapter(it)
             binding.listMainFoodList.adapter = adapter
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getAllData()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

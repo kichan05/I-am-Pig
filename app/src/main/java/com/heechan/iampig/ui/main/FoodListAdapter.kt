@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.heechan.iampig.databinding.RowFoodListBinding
 import com.heechan.iampig.model.data.Food
+import com.heechan.iampig.ui.common.FoodListOptionDialog
 
 class FoodListAdapter(val items : List<Food>) : RecyclerView.Adapter<FoodListAdapter.FoodListViewHolder>() {
     class FoodListViewHolder(val binding : RowFoodListBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -13,6 +14,14 @@ class FoodListAdapter(val items : List<Food>) : RecyclerView.Adapter<FoodListAda
         fun onBind(foodData: Food) {
             this.foodData = foodData
             binding.foodData = foodData
+
+            binding.root.setOnClickListener {
+
+                FoodListOptionDialog(foodData).show(
+                    (it.context as MainActivity).supportFragmentManager, "food option dialog"
+                )
+
+            }
         }
     }
 
